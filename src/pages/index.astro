@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Clubs from "../components/Clubs.astro";
+import GymkhanaTeams from "@/components/Leadership.jsx";
+import Events from "../components/Events.astro";
+import Quote from "../components/Quote.astro";
+import Footer from "../components/Footer.astro";
+import "@/styles/global.css";
+---
+
+<Layout title="Welcome to Astro.">
+	<Header />
+	<main class="flex-1">
+		<Hero />
+		<About />
+		<Clubs />
+		<GymkhanaTeams client:load />
+		<Events />
+		<Quote />
+	</main>
+	<Footer />
+	<!-- <div class="bg-green-400"><h1 class="text-red-400">Hello</h1></div> -->
+</Layout>

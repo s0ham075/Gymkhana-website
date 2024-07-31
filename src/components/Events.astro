@@ -1,0 +1,87 @@
+---
+import { Button } from "./ui/button";
+
+const events = [
+    {
+        title: "Cerebro",
+        description:
+            "Explore the latest technologies and participate in exciting competitions.",
+        date: "April 15, 2023",
+        category: "Technical",
+        imageUrl: "/placeholder.svg",
+    },
+    {
+        title: "Kreiva X Alfaaz",
+        description:
+            "Celebrate the diverse cultures and traditions of IIITV with music, dance, and food.",
+        date: "May 20, 2023",
+        category: "Cultural | Academics",
+        imageUrl: "/placeholder.svg",
+    },
+    {
+        title: "Ventura",
+        description:
+            "Compete in a variety of sports and showcase your athletic talents.",
+        date: "June 10, 2023",
+        category: "Sports",
+        imageUrl: "/placeholder.svg",
+    },
+];
+---
+
+<section class="bg-muted w-full py-12 px-2 md:py-24 lg:py-32">
+    <div class="container mx-auto space-y-8">
+        <div
+            class="flex flex-col items-center justify-center space-y-4 text-center"
+        >
+            <div class="space-y-2">
+                <div class="inline-block rounded-lg bg-white px-3 py-1 text-sm">
+                    Explore Our Events
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+                    Exciting Events
+                </h2>
+                <p
+                    class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                >
+                    Explore the diverse range of events organized by the IIITV
+                    Gymkhana, from cultural celebrations to technical workshops.
+                </p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                events.map((event) => (
+                    <div class="bg-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative">
+                            <img
+                                src={event.imageUrl}
+                                width={600}
+                                height={400}
+                                alt={event.title}
+                                class="w-full h-48 object-cover"
+                            />
+                            <div class="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm">
+                                {event.category}
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">{event.title}</h3>
+                            <p class="text-muted-foreground mt-2">
+                                {event.description}
+                            </p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-sm font-medium text-muted-foreground">
+                                    {event.date}
+                                </span>
+                                <Button variant="outline" size="sm">
+                                    Learn More
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
