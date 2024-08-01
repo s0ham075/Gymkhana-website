@@ -1,4 +1,35 @@
 ---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/landing/Header.astro";
+import Hero from "@/components/ui/Hero.astro";
+import Footer from "@/components/landing/Footer.astro";
+import About from "@/components/ui/About.astro";
+import Members from "@/components/committee/Members.jsx";
+import Clubs from "@/components/committee/Clubs.astro";
+import Events from "@/components/committee/Events.astro";
+import Gallery from "@/components/committee/Gallery";
+import "@/styles/global.css";
 const { committee } = Astro.params;
+const club_line = "The IIITV Technical Committee comprises several specialized clubs that cater to different areas of technology and innovation.";
 ---
-<h1>{committee}</h1>
+
+<Layout title="Student Gymkhana | IIIT Vadodara">
+  <Header />
+  <main class="flex-1">
+    <Hero
+      title={`${committee} Committee IIITV`}
+      tag_line="Empowering innovation and fostering a vibrant technical community at IIITV."
+	  image="/placeholder.svg"
+	  type_true={false}
+	  p_button={{show: true, text: "explore events"}}
+	  s_button={{show: true, text: "join now"}}
+	  />
+    <About title="Empowering Innovation at IIITV" desc="The IIITV Technical Committee is a student-led organization dedicated to fostering a vibrant technical community at IIITV. We aim to empower students to explore their passions, develop their skills, and make a meaningful impact through various initiatives and events."/>
+    <Members />
+    <Events />
+    <Gallery />
+    <Clubs committee={committee} club_line={club_line} />
+  </main>
+  <Footer />
+  <!-- <div class="bg-green-400"><h1 class="text-red-400">Hello</h1></div> -->
+</Layout>

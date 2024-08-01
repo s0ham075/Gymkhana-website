@@ -1,3 +1,7 @@
+---
+import {Button} from './button.tsx';
+const { title, tag_line, image, type_true, p_button, s_button  } = Astro.props;
+---
 <section
     class="bg-black bg-cover bg-center py-12 md:py-24 lg:py-32"
 >
@@ -5,18 +9,18 @@
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="space-y-4">
                 <h1
-                    class="text-4xl text-white font-bold tracking-tighter sm:text-5xl md:text-6xl"
+                    class="text-4xl capitalize text-white font-bold tracking-tighter sm:text-5xl md:text-6xl"
                 >
-                    Unleash Your Potential at <br/><span class="text-6xl" id="element"></span>
+                    {title} <br/><span id="element"></span>
                 </h1>
                 <p class="text-lg text-primary-foreground/80">
-                    Discover a vibrant community of students dedicated to
-                    personal growth, fitness, and campus life.
+                    {tag_line}
                 </p>
-                <!-- <Button variant="secondary">Join Now</Button> -->
+                { p_button.show ? <Button variant="default" className='capitalize'>{p_button.text}</Button> : null}
+                { s_button.show ? <Button variant="outline" className="capitalize bg-black text-white">{s_button.text}</Button> : null}
             </div>
             <img
-                src="/placeholder.svg"
+                src={image}
                 width={600}
                 height={400}
                 alt="IIITV Gymkhana"
@@ -25,12 +29,13 @@
         </div>
     </div>
 </section>
-<script>
+{ type_true ? <script>
     var typed = new Typed('#element', {
       strings: ['IIITV Gymkhana ^1000'],
       typeSpeed: 80,
       backSpeed: 50,
       smartBackspace: true,
       loop: true,
-    });
-</script>
+    }); 
+</script> : null
+}

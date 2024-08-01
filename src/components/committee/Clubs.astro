@@ -1,0 +1,79 @@
+---
+const { committee, club_line } = Astro.params;
+console.log(committee, club_line);
+---
+
+<section id="clubs" class="w-full py-12 md:py-24 lg:py-32">
+  <div class="container mx-auto space-y-8 px-10">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <div class="inline-block capitalize rounded-lg bg-muted px-3 py-1 text-sm">
+          {committee}'s Clubs
+        </div>
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          Clubs within the { committee } Committee
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          {club_line}
+        </p>
+      </div>
+      <div
+        class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12"
+      >
+        <div class="flex flex-col justify-center space-y-4">
+          <h3 class="text-xl font-bold">Robotics Club</h3>
+          <p class="text-muted-foreground">
+            The Robotics Club focuses on designing, building, and programming
+            innovative robotic systems. Members collaborate on projects,
+            participate in competitions, and explore the latest advancements in
+            robotics.
+          </p>
+          <a
+            href="#"
+            class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          >
+            Learn More
+          </a>
+        </div>
+        <img
+          src="/placeholder.svg"
+          width="550"
+          height="310"
+          alt="Robotics Club"
+          class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+        />
+      </div>
+      <div
+        class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12"
+      >
+        <img
+          src="/placeholder.svg"
+          width="550"
+          height="310"
+          alt="AI Club"
+          class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+        />
+        <div class="flex flex-col justify-center space-y-4">
+          <h3 class="text-xl font-bold">AI Club</h3>
+          <p class="text-muted-foreground">
+            The AI Club focuses on exploring the latest advancements in
+            artificial intelligence, machine learning, and deep learning.
+            Members work on projects, attend workshops, and engage in
+            discussions to deepen their understanding of these cutting-edge
+            technologies.
+          </p>
+          <a
+            href="#"
+            class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
