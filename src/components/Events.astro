@@ -9,6 +9,7 @@ const events = [
         date: "April 15, 2023",
         category: "Technical",
         imageUrl: "/placeholder.svg",
+        link: "https://cerebro.iiitvadodara.ac.in",
     },
     {
         title: "Kreiva X Alfaaz",
@@ -17,6 +18,7 @@ const events = [
         date: "May 20, 2023",
         category: "Cultural | Academics",
         imageUrl: "/placeholder.svg",
+        link: "https://kreiva-x-alfaax.iiitvadodara.ac.in",
     },
     {
         title: "Ventura",
@@ -25,6 +27,7 @@ const events = [
         date: "June 10, 2023",
         category: "Sports",
         imageUrl: "/placeholder.svg",
+        link: "https://ventura.iiitvadodara.ac.in",
     },
 ];
 ---
@@ -74,7 +77,7 @@ const events = [
                                 <span class="text-sm font-medium text-muted-foreground">
                                     {event.date}
                                 </span>
-                                <Button variant="outline" size="sm">
+                                <Button variant="outline" size="sm" data-sex="event" data-addr={event.link}>
                                     Learn More
                                 </Button>
                             </div>
@@ -85,3 +88,11 @@ const events = [
         </div>
     </div>
 </section>
+<script>
+    const buttons = document.querySelectorAll('button[data-sex="event"][data-addr]');
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            window.location.href = button.getAttribute('data-addr');
+        });
+    });
+</script>

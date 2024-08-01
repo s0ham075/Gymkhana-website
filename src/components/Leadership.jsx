@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const GymkhanaTeams = () => {
+
     return (
         <section className="w-full py-12 md:py-24 lg:py-32">
             <div className="container mx-auto space-y-8">
@@ -34,16 +35,19 @@ const GymkhanaTeams = () => {
                                 name="John Doe"
                                 role="President"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                             <TeamMember
                                 name="Sarah Adams"
                                 role="Vice President"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                             <TeamMember
                                 name="Michael Kim"
                                 role="Secretary"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                         </div>
                     </TabsContent>
@@ -54,11 +58,13 @@ const GymkhanaTeams = () => {
                                 name="Emily Chen"
                                 role="Events Coordinator"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                             <TeamMember
                                 name="Mia Chinaar"
                                 role="Sponsorship Lead"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                         </div>
                     </TabsContent>
@@ -69,11 +75,13 @@ const GymkhanaTeams = () => {
                                 name="Emily Chen"
                                 role="Events Coordinator"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                             <TeamMember
                                 name="Los Engela"
                                 role="Sponsorship Lead"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                         </div>
                     </TabsContent>
@@ -84,11 +92,13 @@ const GymkhanaTeams = () => {
                                 name="Emily Chen"
                                 role="Events Coordinator"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                             <TeamMember
                                 name="Chu Chin"
                                 role="Sponsorship Lead"
                                 imageUrl="/placeholder.svg"
+                                link = "mailto:202351030@iiitvadodara.ac.in"
                             />
                         </div>
                     </TabsContent>
@@ -98,7 +108,12 @@ const GymkhanaTeams = () => {
     );
 };
 
-const TeamMember = ({ name, role, imageUrl }) => {
+const TeamMember = ({ name, role, imageUrl, link }) => {
+
+    const handleRedirect = (url) => {
+        window.location.href = url;
+    };
+
     return (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
@@ -111,7 +126,7 @@ const TeamMember = ({ name, role, imageUrl }) => {
             <div className="p-6 space-y-2">
                 <h4 className="text-lg font-bold">{name}</h4>
                 <p className="text-muted-foreground">{role}</p>
-                <Button variant="outline" className="w-full">Email</Button>
+                <Button variant="outline" className="w-full" data-sex="member-mail" onClick={() => {handleRedirect(link);}}>Email</Button>
             </div>
         </div>
     );

@@ -3,26 +3,30 @@ import { Button } from "./ui/button";
 
 const clubs = [
     {
-        name: "Tech Committee",
+        name: "Technical Committee",
         description:
             "Explore the latest technologies and build innovative projects.",
         imageUrl: "/placeholder.svg",
+        link: "/committee/technical",
     },
     {
         name: "Cultural Committee",
         description: "Celebrate the diverse cultures and traditions of IIITV.",
         imageUrl: "/placeholder.svg",
+        link: "/committee/cultural",
+    },
+    {
+        name: "Academics Committee",
+        description:
+            "Enhance academic excellence and support student learning.",
+        imageUrl: "/placeholder.svg",
+        link: "/committee/academics",
     },
     {
         name: "Sports Committee",
         description: "Engage in a variety of sports and fitness activities.",
         imageUrl: "/placeholder.svg",
-    },
-    {
-        name: "Academic Committee",
-        description:
-            "Enhance academic excellence and support student learning.",
-        imageUrl: "/placeholder.svg",
+        link: "/committee/sports",
     },
 ];
 ---
@@ -63,8 +67,13 @@ const clubs = [
                             <p class="text-muted-foreground mt-2">
                                 {club.description}
                             </p>
-                            <Button variant="outline" className="mt-4">
-                                Learn More
+                            <Button 
+                              variant="outline" 
+                              className="mt-4" 
+                              data-sex="committee"
+                              data-addr={club.link}
+                            >
+                              Learn More
                             </Button>
                         </div>
                     </div>
@@ -73,3 +82,11 @@ const clubs = [
         </div>
     </div>
 </section>
+<script>
+    const buttons = document.querySelectorAll('button[data-sex="committee"][data-addr]');
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            window.location.href = button.getAttribute('data-addr');
+        });
+    });
+</script>
