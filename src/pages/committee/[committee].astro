@@ -13,7 +13,7 @@ const { committee } = Astro.params;
 const club_line = "The IIITV Technical Committee comprises several specialized clubs that cater to different areas of technology and innovation.";
 ---
 
-<Layout title="Student Gymkhana | IIIT Vadodara">
+<Layout title={`${committee.charAt(0).toUpperCase() + committee.slice(1)} Committee | IIIT Vadodara`}>
   <Header />
   <main class="flex-1">
     <Hero
