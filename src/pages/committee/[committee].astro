@@ -25,9 +25,9 @@ const club_line = "The IIITV Technical Committee comprises several specialized c
 	  s_button={{show: true, text: "join now"}}
 	  />
     <About title="Empowering Innovation at IIITV" desc="The IIITV Technical Committee is a student-led organization dedicated to fostering a vibrant technical community at IIITV. We aim to empower students to explore their passions, develop their skills, and make a meaningful impact through various initiatives and events."/>
-    <Members />
+    <Members client:load />
     <Events />
-    <Gallery />
+    <Gallery client:load/>
     <Clubs committee={committee} club_line={club_line} />
   </main>
   <Footer />

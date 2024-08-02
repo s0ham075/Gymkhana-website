@@ -13,7 +13,7 @@ const Gallery = () => {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-white px-3 py-1 text-sm">
-              Gallery
+              Sneak Peeks
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Explore Our Gallery
