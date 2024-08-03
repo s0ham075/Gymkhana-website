@@ -7,7 +7,7 @@ import About from "@/components/ui/About.astro";
 import Members from "@/components/committee/Members.jsx";
 import Clubs from "@/components/committee/Clubs.astro";
 import Events from "@/components/committee/Events.astro";
-import Gallery from "@/components/committee/Gallery";
+import Gallery from "@/components/ui/Gallery.jsx";
 import "@/styles/global.css";
 const { committee } = Astro.params;
 const committee_title = "Empowering Innovation at IIITV";
@@ -33,5 +33,4 @@ const club_line = "The IIITV Technical Committee comprises several specialized c
     <Clubs committee={committee} club_line={club_line} />
   </main>
   <Footer />
-  <!-- <div class="bg-green-400"><h1 class="text-red-400">Hello</h1></div> -->
 </Layout>

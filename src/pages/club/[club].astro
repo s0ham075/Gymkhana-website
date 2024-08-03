@@ -1,6 +1,34 @@
 ---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/ui/Header.astro";
+import Hero from "@/components/ui/Hero.astro";
+import Footer from "@/components/ui/Footer.astro";
+import About from "@/components/ui/About.astro";
+import Members from "@/components/committee/Members.jsx";
+import Gallery from "@/components/ui/Gallery.jsx";
+import Events from "@/components/club/Events.astro";
+import "@/styles/global.css";
 const { club } = Astro.params;
+const club_title = "The programmers";
+const club_description = "The IIITV coding club is a student-led organization dedicated to fostering a vibrant technical community at IIITV. We aim to empower students to explore their passions, develop their skills, and make a meaningful impact through various initiatives and events.";
+const club_line = "The IIITV Technical club comprises several specialized clubs that cater to different areas of technology and innovation.";
 ---
-<h1>
-    {club}
-</h1>
+
+<Layout title={`${club.charAt(0).toUpperCase() + club.slice(1)} club | IIIT Vadodara`} description={club_description}>
+  <Header />
+  <main class="flex-1">
+    <Hero
+      title={`${club} club IIITV`}
+      tag_line="Empowering students to explore the world of coding and technology."
+	  image="/CodingClub.avif"
+	  type_true={false}
+	  p_button={{show: true, text: "Visit Now"}}
+	  s_button={{show: false}}
+	  />
+    <About title={club_title} desc={club_description}/>
+    <Members client:load />
+    <Events/>
+    <Gallery client:idle/>
+  </main>
+  <Footer />
+</Layout>
