@@ -25,6 +25,7 @@ export default function MenubarDemo() {
         setNav(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
@@ -36,7 +37,63 @@ export default function MenubarDemo() {
     <div className='relative'>
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
         <div className='hidden md:flex'>
-          
+          <Menubar className="bg-primary border-none hidden md:flex">
+            <MenubarMenu>
+              <MenubarTrigger>Home</MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Office Bearers</MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>PICs</MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Committees</MenubarTrigger>
+              <MenubarContent className="bg-primary border-none">
+                <MenubarSub>
+                  <MenubarSubTrigger>Technical</MenubarSubTrigger>
+                  <MenubarSubContent className="bg-primary border-none">
+                    <MenubarItem>Members</MenubarItem>
+                    <MenubarItem>Events</MenubarItem>
+                    <MenubarItem>Gallery</MenubarItem>
+                    <MenubarSub>
+                      <MenubarSubTrigger>Clubs</MenubarSubTrigger>
+                      <MenubarSubContent className="bg-primary border-none">
+                        <MenubarSub>
+                          <MenubarSubTrigger>Loda</MenubarSubTrigger>
+                          <MenubarSubContent className="bg-primary border-none">
+                            <MenubarItem>Members</MenubarItem>
+                            <MenubarItem>Events</MenubarItem>
+                            <MenubarItem>Gallery</MenubarItem>
+                          </MenubarSubContent>
+                        </MenubarSub>
+                        <MenubarSub>
+                          <MenubarSubTrigger>Lassun</MenubarSubTrigger>
+                          <MenubarSubContent className="bg-primary border-none">
+                            <MenubarItem>Members</MenubarItem>
+                            <MenubarItem>Events</MenubarItem>
+                            <MenubarItem>Gallery</MenubarItem>
+                          </MenubarSubContent>
+                        </MenubarSub>
+                      </MenubarSubContent>
+                    </MenubarSub>
+                  </MenubarSubContent>
+                </MenubarSub>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Events</MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Gallery</MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Constitution</MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Contact US</MenubarTrigger>
+            </MenubarMenu>
+          </Menubar>
         </div>
 
         <div onClick={handleNav} className='block md:hidden'>
@@ -83,7 +140,7 @@ export default function MenubarDemo() {
                       </MenubarSub>
                       <MenubarSub>
                         <MenubarSubTrigger className='p-4 border-b border-gray-600'>Lassun</MenubarSubTrigger>
-                        <MenubarSubContent className='bg-primary border-none'>
+                        <MenubarSubContent className="bg-primary border-none">
                           <MenubarItem className='p-4 border-b border-gray-600'>Members</MenubarItem>
                           <MenubarItem className='p-4 border-b border-gray-600'>Events</MenubarItem>
                           <MenubarItem className='p-4 border-b border-gray-600'>Gallery</MenubarItem>
