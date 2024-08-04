@@ -1,20 +1,19 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/landing/Header";
+import Header from "@/components/ui/Header.jsx";
 import Hero from "@/components/ui/Hero.astro";
 import About from "@/components/ui/About.astro";
 import Clubs from "@/components/landing/Committees.astro";
 import GymkhanaTeams from "@/components/landing/Leadership";
 import Events from "@/components/landing/Events.astro";
 import Quote from "@/components/Quote.astro";
-import Footer from "@/components/landing/Footer.astro";
+import Footer from "@/components/ui/Footer.astro";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
-// import { MoveUp } from "@/components/motion/framarMotion";
 import "@/styles/global.css";
 ---
 
-<Layout title="Student Gymkhana | IIIT Vadodara">
-  <Header client:only />
+<Layout title="Student Gymkhana | IIIT Vadodara" description="IIITV Student Gymkhana | Committees | Clubs">
+  <Header client:only/>
   <main class="flex-1">
     <Hero
     title="Unleash Your Potential at"
