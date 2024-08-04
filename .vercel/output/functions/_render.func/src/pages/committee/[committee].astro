@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/ui/Header.jsx";
+import Hero from "@/components/ui/Hero.astro";
+import Footer from "@/components/ui/Footer.astro";
+import About from "@/components/ui/About.astro";
+import Members from "@/components/committee/Members.jsx";
+import Clubs from "@/components/committee/Clubs.astro";
+import Events from "@/components/committee/Events.astro";
+import Gallery from "@/components/ui/Gallery.jsx";
+import "@/styles/global.css";
+
+export function getStaticPaths() {
+  return {
+    paths: [
+      { params: { committee: "Technical" } },
+      { params: { committee: "Cultural" } },
+      { params: { committee: "Sports" } },
+    ],
+    fallback: false,
+  };
+}
+const { committee }: { committee: string } = Astro.params;
+const committee_title = "Empowering Innovation at IIITV";
+const committee_description = "The IIITV Technical Committee is a student-led organization dedicated to fostering a vibrant technical community at IIITV. We aim to empower students to explore their passions, develop their skills, and make a meaningful impact through various initiatives and events.";
+const club_line = "The IIITV Technical Committee comprises several specialized clubs that cater to different areas of technology and innovation.";
+---
+
+<Layout title={`${committee.charAt(0).toUpperCase() + committee.slice(1)} Committee | IIIT Vadodara`} description={committee_description}>
+  <Header client:only/>
+  <main class="flex-1">
+    <Hero
+      title={`${committee} Committee IIITV`}
+      tag_line="Empowering innovation and fostering a vibrant technical community at IIITV."
+	  image="/placeholder.svg"
+	  type_true={false}
+	  p_button={{show: true, text: "explore events"}}
+	  s_button={{show: true, text: "join now"}}
+	  />
+    <About title={committee_title} desc={committee_description}/>
+    <Members client:load />
+    <Events />
+    <Gallery client:idle/>
+    <Clubs committee={committee} club_line={club_line} />
+  </main>
+  <Footer />
+</Layout>
