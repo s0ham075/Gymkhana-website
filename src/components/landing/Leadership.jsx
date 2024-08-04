@@ -1,6 +1,9 @@
+'use client';
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Move, Zoom } from '../motion/framerMotion';
+
 
 const GymkhanaTeams = () => {
 
@@ -8,21 +11,27 @@ const GymkhanaTeams = () => {
         <section className="w-full py-12 md:py-24 lg:py-32">
             <div className="container mx-auto space-y-8">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                    <div className="space-y-2">
-                        <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+                    <div className="flex flex-col items-center gap-2">
+                      <Move  whileInView onceView delay={0}>
+                        <div className="inline-block rounded-lg bg-muted text-black/90 px-3 py-1 text-sm">
                             Gymkhana Leadership
                         </div>
+                      </Move>
+                      <Move whileInView onceView delay={0.2}>
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                             Meet the Gymkhana Teams
                         </h2>
+                      </Move>
+                      <Move whileInView onceView delay={0.4}>
                         <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                             The IIITV Gymkhana is led by dedicated student representatives across various teams.
                         </p>
+                      </Move>
                     </div>
                 </div>
 
                 <Tabs defaultValue="executive" className="mt-8">
-                    <TabsList className="flex flex-wrap justify-center gap-4 mb-6 bg-white">
+                    <TabsList className="flex flex-wrap justify-center gap-4 mb-6 bg-transparent">
                         <TabsTrigger value="executive">Executive Team</TabsTrigger>
                         <TabsTrigger value="events">Events Team</TabsTrigger>
                         <TabsTrigger value="activities">Activities Team</TabsTrigger>
@@ -115,6 +124,7 @@ const TeamMember = ({ name, role, imageUrl, link }) => {
     };
 
     return (
+      <Zoom whileInView>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
                 src={imageUrl}
@@ -124,11 +134,12 @@ const TeamMember = ({ name, role, imageUrl, link }) => {
                 className="w-full h-[300px] object-cover object-center"
             />
             <div className="p-6 space-y-2">
-                <h4 className="text-lg font-bold">{name}</h4>
+                <h4 className="text-black/65 text-lg font-bold">{name}</h4>
                 <p className="text-muted-foreground">{role}</p>
-                <Button variant="outline" className="w-full" data-sex="member-mail" onClick={() => {handleRedirect(link);}}>Email</Button>
+                <Button variant="default" className="w-full" data-sex="member-mail" onClick={() => {handleRedirect(link);}}>Email</Button>
             </div>
         </div>
+      </Zoom>
     );
 };
 

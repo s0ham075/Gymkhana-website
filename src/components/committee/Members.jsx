@@ -5,7 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 const GymkhanaTeams = () => {
 
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted text-muted-header ">
             <div className="container mx-auto space-y-8">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
@@ -101,9 +101,9 @@ const TeamMember = ({ name, role, imageUrl, link }) => {
                 className="w-full h-[300px] object-cover object-center"
             />
             <div className="p-6 space-y-2">
-                <h4 className="text-lg font-bold">{name}</h4>
+                <h4 className="text-black/65 text-lg font-bold">{name}</h4>
                 <p className="text-muted-foreground">{role}</p>
-                <Button variant="outline" className="w-full" data-sex="member-mail" onClick={() => {handleRedirect(link);}}>Email</Button>
+                <Button variant="default" className="w-full outline-none border-none" data-sex="member-mail" onClick={() => {handleRedirect(link);}}>Email</Button>
             </div>
         </div>
     );

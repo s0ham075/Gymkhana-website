@@ -1,36 +1,53 @@
 ---
-import {Button} from './button.tsx';
-const { title, tag_line, image, type_true, p_button, s_button  } = Astro.props;
+import { Button } from './button.tsx';
+import { HeroHighlight } from './hero-highlight.tsx';
+import { Move, Zoom, CardEffect } from '../motion/framerMotion.tsx';
+
+const { title, title_element, tag_line, image, type_true, p_button, s_button  } = Astro.props;
+
 ---
-<section
-    class="bg-black bg-cover bg-center py-12 md:py-24 lg:py-32"
->
+
+<HeroHighlight client:load className="bg-cover bg-center py-12 md:py-24 lg:py-32" containerClassName="">
+  <section class="bg-cover bg-center py-12 md:py-24 lg:py-12">
     <div class="container mx-auto px-4 md:px-6">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-4">
-                <h1
-                    class="text-4xl capitalize text-white font-bold tracking-tighter sm:text-5xl md:text-6xl"
-                >
-                    {title} <br/><span id="element"></span>
-                </h1>
-                <p class="text-lg text-primary-foreground/80">
-                    {tag_line}
-                </p>
-                { p_button.show ? <Button variant="default" className='capitalize'>{p_button.text}</Button> : null}
-                { s_button.show ? <Button variant="outline" className="capitalize bg-black text-white">{s_button.text}</Button> : null}
+        <div class="grid md:grid-cols-2 gap-8 items-center ">
+            <div class="space-y-8 md:space-y-14 lg:space-y-14 h-full flex flex-col justify-center">
+              <div class="space-y-4">
+                  <h1
+                    class="text-4xl capitalize font-bold tracking-tighter sm:text-5xl md:text-5xl lg:text-6xl text-center md:text-start"
+                  >
+                    <Move client:load transition={{duration: 1}}>
+                      {title} <br/>
+                      <span class="text-[var(--base-color)]">{title_element}</span>
+                    </Move>
+                  </h1>
+                  <p class="text-lg text-primary-foreground/80 text-center md:text-start px-2">
+                      <Move client:load transition={{duration: 2, delay : .2}}>
+                        {tag_line}
+                      </Move>
+                    </p>
+                </div>
+                <div class="w-[100%] lg:w-[80%] flex justify-center md:justify-center gap-2 items-center ">
+                  { p_button.show ? <Zoom client:load delay={.5} ><Button variant="outlineV2" className='capitalize p-6 rounded-none'>{p_button.text}</Button></Zoom> : null}
+                  { s_button.show ? <Zoom client:load delay={.7} ><Button variant="outline" className="capitalize text-white p-6">{s_button.text}</Button></Zoom> : null}
+                </div>
             </div>
-            <img
-                src={image}
-                width={600}
-                height={400}
-                alt="IIITV Gymkhana"
-                class="rounded-xl object-cover"
-            />
+            <CardEffect client:load className="rounded-xl overflow-hidden">
+                <img
+                    src={image}
+                    width={700}
+                    height={400}
+                    alt="IIITV Gymkhana"
+                    class="rounded-xl object-cover"
+                />
+            </CardEffect>
         </div>
     </div>
-</section>
+  </section>
+</HeroHighlight>
+
 { type_true ? <script>
-    var typed = new Typed('#element', {
+    var typed = new typed('#element', {
       strings: ['IIITV Gymkhana ^1000'],
       typeSpeed: 80,
       backSpeed: 50,

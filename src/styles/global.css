@@ -4,19 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
+    --base-color: #2563eb;
+    --base-color-dark: #1d4ed8;
+    --primary-color: #2563eb;
+    --primary-color-hover: #1d4ed8;
+    --primary-color-dark: #1e40af;
+
+    --foregr: #c5c6c7;
+    --backgro: #1f2833;
+    /* 213, 24%, 16% */
+    --background-dark: 233, 29%, 5%; 
+    --car: #0b0c10;
+    /* 228, 19%, 5% */
+
+    --background: 233, 29%, 0%;
+    --foreground: 0, 20%, 98%;
+    --card: 235, 18%, 12%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: 233, 29%, 5%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 235, 16%, 31%;
     --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
+    --muted: 231, 37%, 90%;
+    --muted-header: 240 5.9% 10%;
     --muted-foreground: 240 3.8% 45%;
-    --accent: 240 4.8% 95.9%;
+    --accent: 210, 2%, 90%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
