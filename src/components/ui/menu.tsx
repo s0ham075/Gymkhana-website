@@ -10,6 +10,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { Menu } from 'lucide-react';
 
 export default function MenubarDemo() {
   const [nav, setNav] = useState(false);
@@ -88,10 +89,11 @@ export default function MenubarDemo() {
               <MenubarTrigger>Gallery</MenubarTrigger>
             </MenubarMenu>
             <MenubarMenu>
-              <MenubarTrigger>Constitution</MenubarTrigger>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger>Contact US</MenubarTrigger>
+              <MenubarTrigger>More</MenubarTrigger>
+              <MenubarContent className="bg-primary border-none">
+                <MenubarItem>Constitution</MenubarItem>
+                <MenubarItem>Contact US</MenubarItem>
+              </MenubarContent>
             </MenubarMenu>
           </Menubar>
         </div>
