@@ -35,10 +35,10 @@ export default function MenubarDemo() {
   }, [nav]);
 
   return (
-    <div className=''>
+    <div className='relative'>
       <div className='flex justify-between items-center max-w-[1240px] mx-auto px-4 text-white'>
         <div className='hidden lg:flex'>
-          <Menubar className="bg-primary border-none hidden md:flex">
+          <Menubar className="bg-transparent border-none hidden md:flex">
             <MenubarMenu>
               <MenubarTrigger>Home</MenubarTrigger>
             </MenubarMenu>
