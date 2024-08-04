@@ -1,0 +1,69 @@
+{
+    "technical": {
+        "tag_line": "Empowering innovation and fostering a vibrant technical community at IIITV.",
+        "description": "Explore the latest technologies and build innovative projects.",
+        "image": "https://phalana.dhimkhana/kuch.kuch",
+        "about_heading": "Empowering Innovation at IIITV",
+        "about": "The IIITV Technical Committee is a student-led organization dedicated to fostering a vibrant technical community at IIITV. We aim to empower students to explore their passions, develop their skills, and make a meaningful impact through various initiatives and events.",
+        "team": {
+            "committee_leads": [
+                {
+                    "name": "Aman Kumar",
+                    "role": "Technical Committee Lead",
+                    "image": "https://avatars.githubusercontent.com/u/47269253?v=4",
+                    "email": "something@asdnas.com"
+                },
+                {
+                    "name": "Saksham Arora",
+                    "role": "Technical Committee Lead",
+                    "image": "https://avatars.githubusercontent.com/u/47269253?v=4",
+                    "email": "something@asdnas.com"
+                }
+            ],
+            "core_team": [
+                "similar shit like above"
+            ],
+            "trainees": [
+                "similar shit"
+            ]
+        },
+        "event_line": "The Technical Committee of IIITV organizes a range of flagship events throughout the year, aimed at fostering innovation, building community, and empowering students.",
+        "event_pic": "iamge link",
+        "events": [
+            {
+                "name": "HackIIITV",
+                "description": "Our annual hackathons challenge students to develop innovative solutions to real-world problems, fostering creativity and collaboration.",
+                "link": "event website link or #" 
+            },
+            "more events"
+        ],
+        "clubs": {
+            "coding": {
+                "tag_line": "Empowering students to explore the world of coding and technology.",
+                "image": "image url",
+                "description": "The Coding Club emphasizes developing programming skills and creating software solutions. Members engage in collaborative projects, coding challenges, and learn about cutting-edge technologies and best practices in software development and competitive programming.",
+                "about_heading": "The programmers",
+                "about": "The IIITV coding club is a student-led organization dedicated to fostering a vibrant technical community at IIITV. We aim to empower students to explore their passions, develop their skills, and make a meaningful impact through various initiatives and events.",
+                "team": {
+                    "club_leads": [
+                        "similar member objects"
+                    ],
+                    "if they divide into multiple parts, then add more keys, else just all other in one": [
+                        "similar"
+                    ]
+                },
+                "event_line": "whatever line goes under the events section",
+                "events": [
+                    {
+                        "name": "CodeStrike",
+                        "date": "unix timestamp",
+                        "description": "Improve your problem-solving skills and learn advanced techniques for competitive programming. This workshop is suitable for both beginners and experienced coders.",
+                        "image": "image url",
+                        "link": "event link / host etc. whatever applicable"
+                    },
+                    "more events"
+                ]
+            }
+        }
+    }
+}
