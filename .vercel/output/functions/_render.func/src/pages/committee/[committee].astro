@@ -38,9 +38,9 @@ const club_line = "The IIITV Technical Committee comprises several specialized c
 	  s_button={{show: true, text: "join now"}}
 	  />
     <About title={committee_title} desc={committee_description}/>
-    <Members client:load />
+    <Members />
     <Events />
-    <Gallery client:idle/>
+    <Gallery />
     <Clubs committee={committee} club_line={club_line} />
   </main>
   <Footer />
