@@ -1,5 +1,6 @@
 ---
 import { Button } from "../ui/button";
+import { Move } from "../motion/framerMotion";
 
 const events = [
     {
@@ -32,29 +33,50 @@ const events = [
 ];
 ---
 
-<section class="bg-muted w-full py-12 px-2 md:py-24 lg:py-32">
+<section class="bg-muted text-muted-header w-full py-12 px-2 md:py-24 lg:py-32">
     <div class="container mx-auto space-y-8">
         <div
             class="flex flex-col items-center justify-center space-y-4 text-center"
         >
-            <div class="space-y-2">
+            <div class="flex flex-col items-center gap-2">
+              <Move client:load whileInView onceView delay={0}>
                 <div class="inline-block rounded-lg bg-white px-3 py-1 text-sm">
                     Explore Our Events
                 </div>
+              </Move>
+              <Move client:load whileInView onceView delay={.2}>
                 <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
                     Exciting Events
                 </h2>
+              </Move>
+              <Move client:load whileInView onceView delay={.4}>
                 <p
                     class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
                 >
                     Explore the diverse range of events organized by the IIITV
                     Gymkhana, from cultural celebrations to technical workshops.
                 </p>
+              </Move>
             </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {
-                events.map((event) => (
+              events.map((event, index) => {
+                  let animate = null
+                  switch(index%3){
+                    case 0:
+                      animate = 'left'
+                      break
+                    case 1:
+                      animate = 'up'
+                      break
+                    case 2:
+                      animate = 'right'
+                      break
+                  }
+
+                  return (
+                  <Move custom={55} client:load animate={animate} whileInView delay={0} transition={{duration: 2}}>
                     <div class="bg-card rounded-lg overflow-hidden shadow-lg">
                         <div class="relative">
                             <img
@@ -64,26 +86,27 @@ const events = [
                                 alt={event.title}
                                 class="w-full h-48 object-cover"
                             />
-                            <div class="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm">
+                            <div class="absolute top-4 left-4 bg-[var(--base-color)] text-primary-foreground px-3 py-1 rounded-md text-sm">
                                 {event.category}
                             </div>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-xl font-bold">{event.title}</h3>
-                            <p class="text-muted-foreground mt-2">
+                            <h3 class="text-xl font-bold text-foreground">{event.title}</h3>
+                            <p class="text-muted-foreground mt-2 h-[50px]">
                                 {event.description}
                             </p>
                             <div class="mt-4 flex justify-between items-center">
                                 <span class="text-sm font-medium text-muted-foreground">
                                     {event.date}
                                 </span>
-                                <Button variant="outline" size="sm" data-sex="event" data-addr={event.link}>
+                                <Button variant="default" size="sm" data-sex="event" data-addr={event.link}>
                                     Learn More
                                 </Button>
                             </div>
                         </div>
                     </div>
-                ))
+                  </Move>
+                )})
             }
         </div>
     </div>

@@ -36,9 +36,9 @@ export default function MenubarDemo() {
 
   return (
     <div className='relative'>
-      <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
-        <div className='hidden md:flex'>
-          <Menubar className="bg-primary border-none hidden md:flex">
+      <div className='flex justify-between items-center max-w-[1240px] mx-auto px-4 text-white'>
+        <div className='hidden lg:flex'>
+          <Menubar className="bg-transparent border-none hidden md:flex">
             <MenubarMenu>
               <MenubarTrigger>Home</MenubarTrigger>
             </MenubarMenu>
@@ -98,7 +98,7 @@ export default function MenubarDemo() {
           </Menubar>
         </div>
 
-        <div onClick={handleNav} className='block md:hidden'>
+        <div onClick={handleNav} className='block lg:hidden'>
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function MenubarDemo() {
       <div
         className={
           nav
-            ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 menubar-container'
+            ? 'fixed left-0 top-0 w-[60%] h-[100dvh] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 menubar-container'
             : 'ease-in-out duration-500 fixed left-[-100%] menubar-container'
         }
       >

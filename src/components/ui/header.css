@@ -1,0 +1,7 @@
+.navbar {
+  transition: transform .5s;
+}
+
+.scrollUp {
+  transform: translateY(-100%);
+}
