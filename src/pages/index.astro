@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/ui/Header.jsx";
+import Header from "@/components/ui/Header";
 import Hero from "@/components/ui/Hero.astro";
 import About from "@/components/ui/About.astro";
 import Clubs from "@/components/landing/Committees.astro";
@@ -9,11 +9,13 @@ import Events from "@/components/landing/Events.astro";
 import Quote from "@/components/Quote.astro";
 import Footer from "@/components/ui/Footer.astro";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
+import App from './org-chart/App.jsx';
 import "@/styles/global.css";
 ---
 
+
 <Layout title="Student Gymkhana | IIIT Vadodara" description="IIITV Student Gymkhana | Committees | Clubs">
-  <Header client:visible />
+  <Header client:only />
   <main class="flex-1">
     <Hero
     title="Unleash Your Potential at"
@@ -24,6 +26,7 @@ import "@/styles/global.css";
     p_button={{ show: true, text: "Reach Us" }}
     s_button={{ show: false, text: "Contact Us" }}
     />
+    <App className="bg-muted max-[700px] h-[700px] overflow-hidden relative" client:only href="./org-chart"/>
     <About
       title="About Student Gymkhana"
       desc="The IIITV Gymkhana is the student government body that represents the diverse interests and aspirations of the student community at IIIT Vadodara. We are committed to fostering a vibrant campus life, promoting student welfare, and empowering our peers to reach new heights."
