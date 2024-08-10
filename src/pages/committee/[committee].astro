@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/ui/Header.js";
+import Header from "@/components/ui/Header.tsx";
 import Hero from "@/components/ui/Hero.astro";
 import Footer from "@/components/ui/Footer.astro";
 import About from "@/components/ui/About.astro";
@@ -27,7 +27,7 @@ const club_line = "The IIITV Technical Committee comprises several specialized c
 ---
 
 <Layout title={`${committee.charAt(0).toUpperCase() + committee.slice(1)} Committee | IIIT Vadodara`} description={committee_description}>
-  <Header client:visible />
+  <Header client:only />
   <main class="flex-1">
     <Hero
       title={`${committee} Committee IIITV`}
