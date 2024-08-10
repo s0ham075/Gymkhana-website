@@ -9,11 +9,10 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { Menu } from 'lucide-react';
+// import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 export default function MenubarDemo() {
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState<boolean>(false);
 
   const handleNav = () => {
     setNav(!nav);
@@ -35,8 +34,9 @@ export default function MenubarDemo() {
   }, [nav]);
 
   return (
+    <>
     <div className='relative'>
-      <div className='flex justify-between items-center max-w-[1240px] mx-auto px-4 text-white'>
+      <div className='relative flex justify-between items-center max-w-[1240px] mx-auto px-4 text-white'>
         <div className='hidden lg:flex'>
           <Menubar className="bg-transparent border-none hidden md:flex">
             <MenubarMenu>
@@ -97,20 +97,18 @@ export default function MenubarDemo() {
             </MenubarMenu>
           </Menubar>
         </div>
-
-        <div onClick={handleNav} className='block lg:hidden'>
+        {/* <div onClick={} className='block lg:hidden'>
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-        </div>
+        </div> */}
       </div>
-
-      <div
+      {/* <div
         className={
           nav
             ? 'fixed left-0 top-0 w-[60%] h-[100dvh] border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 menubar-container'
             : 'ease-in-out duration-500 fixed left-[-100%] menubar-container'
         }
-      >
-        <Menubar className="bg-primary border-none flex flex-col">
+        > */}
+        {/* <Menubar className="bg-primary border-none flex flex-col">
           <MenubarMenu>
             <MenubarTrigger className='p-4 border-b border-gray-600'>Home</MenubarTrigger>
           </MenubarMenu>
@@ -166,8 +164,9 @@ export default function MenubarDemo() {
           <MenubarMenu>
             <MenubarTrigger className='p-4 border-b border-gray-600'>Contact US</MenubarTrigger>
           </MenubarMenu>
-        </Menubar>
-      </div>
+        </Menubar> */}
+      {/* </div> */}
     </div>
+    </>
   );
 }
