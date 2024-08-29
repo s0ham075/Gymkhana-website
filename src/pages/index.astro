@@ -26,11 +26,11 @@ import "@/styles/global.css";
     p_button={{ show: true, text: "Reach Us" }}
     s_button={{ show: false, text: "Contact Us" }}
     />
-    <App className="bg-muted max-[700px] h-[700px] overflow-hidden relative" client:only href="./org-chart"/>
     <About
-      title="About Student Gymkhana"
-      desc="The IIITV Gymkhana is the student government body that represents the diverse interests and aspirations of the student community at IIIT Vadodara. We are committed to fostering a vibrant campus life, promoting student welfare, and empowering our peers to reach new heights."
+    title="About Student Gymkhana"
+    desc="The IIITV Gymkhana is the student government body that represents the diverse interests and aspirations of the student community at IIIT Vadodara. We are committed to fostering a vibrant campus life, promoting student welfare, and empowering our peers to reach new heights."
     />
+    <App className="bg-muted max-[700px] h-[700px] overflow-hidden relative" client:only href="./org-chart" zoomOnWheel={false}/>
     <Clubs />
     <HeroHighlight
       client:load

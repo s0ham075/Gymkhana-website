@@ -4,7 +4,7 @@
   font-family: "Roboto", sans-serif;
 }
 .title {
-  background-color: #525e88;
+  background-color: #1a1a1a;
   color: #fef9ef;
   text-align: center;
   padding: 1rem;
@@ -19,7 +19,7 @@
   height: 100%;
   background-color: transparent;
 }
-.node-container {
+/* .node-container {
   min-height: 140px;
   background-color: #404040;
   display: flex;
@@ -100,21 +100,22 @@
 }
 .node-department > svg {
   margin-right: 0.5rem;
-}
+} */
+
 .expand-btn {
   margin: auto;
   padding: 0.2rem 0.3rem;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 0;
   left: 0;
-  color: #d7ef26;
-  background-color: #404040;
+  color: #adadad;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.2rem;
-  border: 1px solid #d7ef26;
+  gap: 0.1rem;
+  border: 1px solid #cdcdcd;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -123,7 +124,7 @@
 }
 
 /* card css */
-.card-close-btn {
+/* .card-close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -208,4 +209,4 @@
 .card-item-role {
   font-size: 0.8rem;
   margin-left: 0.5rem;
-}
+} */

@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <header id="navbar" className="navbar fixed top-0 z-50 w-full">
-      <div className=" container mx-auto  hidden lg:flex items-center justify-between bg-black/70 backdrop-blur-sm text-primary-foreground py-5 px-4 md:px-6 w-[90%] max-w-[1140px] mt-4 rounded-full">
+      <div className=" container mx-auto  hidden lg:flex items-center justify-between bg-black/20 backdrop-blur-sm text-primary-foreground py-3 px-4 md:px-6 w-[90%] max-w-[1140px] mt-4 rounded-[10px]">
           <a href="#" className="flex items-center gap-2">
               <span className="text-lg font-normal">IIITV Gymkhana</span>
           </a>
@@ -84,7 +84,7 @@ const ViewDownMenu = () => {
   const handleBarClick = () => {
     setIsOpen(!isOpen);
     const dur = 168;
-    lottieRef.current.setSpeed(2);
+    lottieRef.current.setSpeed(3);
 
     if ( !isOpen ) {
       lottieRef.current.playSegments([0, dur/2], true);
@@ -104,7 +104,7 @@ const ViewDownMenu = () => {
             whileTap={{ scale: 0.97 }}
             onClick={handleBarClick}
             id="nav-container"
-            className="container mx-auto flex items-center justify-between bg-black/70 backdrop-blur-sm text-primary-foreground py-6 px-6 md:px-12 w-full max-w-[1140px] mt-4 mb-1 rounded-full "
+            className="container mx-auto flex items-center justify-between bg-black/20 backdrop-blur-md text-primary-foreground py-4 px-4 sm:px-6 sm:py-5 md:px-6 w-full max-w-[1140px] mt-4 mb-2 rounded-[10px]"
           >
             <a href="#" className="flex items-center gap-2">
               <span className="text-lg font-normal">IIITV Gymkhana</span>
@@ -137,9 +137,9 @@ const ViewDownMenu = () => {
             style={{
               pointerEvents: isOpen ? "auto" : "none",
               display: isOpen ? "flex" : "none"}}
-            className="bg-black/90 backdrop-blur-s p-4 mx-4 flex flex-col gap-[10px] "
+            className="bg-black/25 backdrop-blur-md px-4 py-10 flex flex-col"
           >
-            <SimpleTreeView >
+            <SimpleTreeView className="flex flex-col gap-[2px]">
               <motion.li variants={itemVariants}>
                 <TreeItem itemId="home" label="Home"/>
               </motion.li>

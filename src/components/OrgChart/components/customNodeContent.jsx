@@ -61,19 +61,88 @@ const ProfileCard = ({ width, height, data }) => {
   const color = '#FFFFFF';
   const imageDiffVert = 25 + 2;
 
+  // function getRandomColor() {
+  //   return "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
+  // }
+
+  function rainbow(numOfSteps, step) {
+    var r, g, b;
+    var h = step / numOfSteps;
+    var i = ~~(h * 6);
+    var f = h * 6 - i;
+    var q = 1 - f;
+    switch(i % 6){
+        case 0: r = 1; g = f; b = 0; break;
+        case 1: r = q; g = 1; b = 0; break;
+        case 2: r = 0; g = 1; b = f; break;
+        case 3: r = 0; g = q; b = 1; break;
+        case 4: r = f; g = 0; b = 1; break;
+        case 5: r = 1; g = 0; b = q; break;
+    }
+    var c = "#" + ("00" + (~ ~(r * 255)).toString(16)).slice(-2) + ("00" + (~ ~(g * 255)).toString(16)).slice(-2) + ("00" + (~ ~(b * 255)).toString(16)).slice(-2) + 'be';
+    return (c);
+}
+
   return (
-    <div style={{ width: `${width}px`, height: `${height}px`, paddingTop: `${imageDiffVert - 2}px`, paddingLeft: '1px', paddingRight: '1px' }}>
-      <div style={{ fontFamily: 'Inter, sans-serif', backgroundColor: color, marginLeft: '-1px', width: `${width - 2}px`, height: `${height - imageDiffVert}px`, borderRadius: '10px', border: '1px solid #E4E2E9' }}>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '5px', marginRight: '8px' }}>#{data.id}</div>
-        <div style={{ backgroundColor: color, marginTop: `${-imageDiffVert - 20}px`, marginLeft: '15px', borderRadius: '100px', width: '50px', height: '50px' }}></div>
-        <div style={{ marginTop: `${-imageDiffVert - 20}px` }}>
-          <img src={data.image} alt="Profile" style={{ marginLeft: '20px', borderRadius: '100px', width: '40px', height: '40px' }} />
+    <div className={"pl-1 pr-1"}
+    style={{
+      width: `${width}px`,
+      height: `${height}px`,
+      paddingTop: `${imageDiffVert - 2}px`,
+    }}>
+      <div
+        className={`ml-[-1px] rounded-lg border border-gray-300`}
+        style={{
+          backgroundColor: color,
+          width: `${width - 2}px`,
+          height: `${height - imageDiffVert}px`,
+        }}
+      >
+        <div className="text-black flex justify-end mt-[5px] mr-[8px]">
+          #{data.id}
         </div>
-        <div style={{ fontSize: '15px', color: '#08011E', marginLeft: '20px', marginTop: '10px' }}>{data.name}</div>
-        <div style={{ color: '#716E7B', marginLeft: '20px', marginTop: '3px', fontSize: '10px' }}>{data.position}</div>
+        
+        <div
+          className="rounded-full"
+          style={{
+            backgroundColor: color,
+            marginTop: `${-imageDiffVert - 20}px`,
+            marginLeft: '10px',
+            width: '60px',
+            height: '60px'
+          }}
+        ></div>
+
+        <div
+          className="relative "
+          style={{
+            marginTop: `${-imageDiffVert - 30}px`,
+          }}
+        >
+          <img
+            src={data.imageUrl}
+            alt="Profile"
+            className="rounded-full min-h-full w-[50px] h-[50px] block object-contain ml-[15px] "
+            style={{
+              background: rainbow(4, data.id),
+            }}
+          />
+        </div>
+
+        <div className="text-[15px] text-[#08011E] ml-[20px] mt-[10px]">
+          {data.name}
+        </div>
+        
+        <div className="text-[10px] text-[#716E7B] ml-[20px] mt-[3px]">
+          {data.positionName}
+        </div>
+        
+        <div className="text-[10px] text-[#716E7B] ml-[20px] mt-[3px]">
+          {data.committee}
+        </div>
       </div>
     </div>
   );
 };
 
-export default CustomNodeContent;
+export { CustomNodeContent, ProfileCard };

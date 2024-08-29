@@ -2,8 +2,9 @@ const data = [
   {
     id: 1,
     parentId: "",
-    name: "John",
-    positionName: "CEO",
+    name: "Vaibhav Joniwal",
+    positionName: "General Secretary",
+    committee: "Gymkhana",
     phone: "99887766",
     email: "employee@email.com",
     team: "",
@@ -11,7 +12,7 @@ const data = [
     department: "",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    imageUrl: "https://randomuser.me/api/portraits/men/1.jpg",
+    imageUrl: "/members/vaibhav.png",
   },
   {
     id: 2,
