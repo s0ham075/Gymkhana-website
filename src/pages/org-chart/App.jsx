@@ -7,12 +7,13 @@ import data from "./data.jsx";
 const App = ({
   className,
   href = null,
+  zoomOnWheel = true,
   children: _children = null,
 }) => {
   return (
     <>
       <h1 className="title">Organization Chart</h1>
-      <div className={cn(className)}>
+      <div className={cn(className, "")} >
         { _children }
         { href &&
         <div className="flex justify-end w-full absolute p-4">
@@ -20,10 +21,9 @@ const App = ({
           <FiExternalLink size={25}/>
           </a>
         </div>
-    }
-      <OrganizationalChart data={data} />
-
-    </div>
+      }
+      <OrganizationalChart data={data} zoomOnWheel={zoomOnWheel}/>
+      </div>
     </>
   );
 };
