@@ -1,0 +1,123 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/ui/Header.tsx";
+import Footer from "@/components/ui/Footer.astro";
+import { ArrowRightIcon } from "@/components/ui/arrowright";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import EventCarousel from "@/components/ui/eventscarousel";
+import "@/styles/global.css";
+
+// In a real-world scenario, you'd fetch this data from an API or database
+const technicalData = {
+    event_line:
+        "The Technical Committee of IIITV organizes a range of flagship events throughout the year, aimed at fostering innovation, building community, and empowering students.",
+    event_pic: "image link",
+    events: [
+        {
+            name: "HackIIITV",
+            description:
+                "Our annual hackathons challenge students to develop innovative solutions to real-world problems, fostering creativity and collaboration.",
+            link: "event website link or #",
+            image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_photos/002/764/052/datas/full_width.png",
+            date: "1672531200",
+        },
+        {
+            name: "HackIIITV",
+            description:
+                "Our annual hackathons challenge students to develop innovative solutions to real-world problems, fostering creativity and collaboration.",
+            link: "event website link or #",
+            image: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_photos/002/764/052/datas/full_width.png",
+            date: "1672531200",
+        },
+        // Add more events here as needed
+    ],
+    clubs: {
+        coding: {
+            events: [
+                {
+                    name: "CodeStrike",
+                    date: 1672531200, // Example Unix timestamp for Jan 1, 2023
+                    description:
+                        "Improve your problem-solving skills and learn advanced techniques for competitive programming. This workshop is suitable for both beginners and experienced coders.",
+                    image: "https://avatars.githubusercontent.com/u/6821787?s=280&v=4",
+                    link: "event link / host etc. whatever applicable",
+                },
+                // Add more club events here as needed
+            ],
+        },
+        // Add more clubs here as needed
+    },
+};
+
+// Combine all events into a single array
+const MainEvents = [...technicalData.events];
+
+const allEvents = [
+    ...Object.values(technicalData.clubs).flatMap((club) => club.events),
+];
+const page_title = "Events | IIIT Vadodara";
+const page_description = technicalData.event_line;
+---
+
+<Layout title={page_title} description={page_description}>
+    <Header client:only="react" />
+    <main class="flex-1">
+        <div class="w-full">
+            <section class="w-full py-12 px-12 md:py-24 mx-auto lg:py-32">
+                <div class="mx-auto">
+                    <EventCarousel
+                        events={MainEvents.slice(0, 3)}
+                        client:load
+                    />
+                </div>
+            </section>
+            <section class="w-full py-12 md:py-16 lg:py-20">
+                <div class="container px-4 md:px-6">
+                    <div
+                        class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                    >
+                        {
+                            allEvents.map((event, index) => (
+                                <Card className="group">
+                                    <a href={event.link} class="block">
+                                        <div class="relative aspect-[4/3] overflow-hidden rounded-t-xl">
+                                            <img
+                                                src={
+                                                    event.image ||
+                                                    "/placeholder.svg"
+                                                }
+                                                alt={event.name}
+                                                width={600}
+                                                height={450}
+                                                class="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                            />
+                                        </div>
+                                        <CardContent>
+                                            <h3 class="text-lg font-semibold">
+                                                {event.name}
+                                            </h3>
+                                            <p class="mt-2 text-sm text-muted-foreground">
+                                                {event.description}
+                                            </p>
+                                            <div class="mt-4 flex items-center justify-between">
+                                                <Button
+                                                    variant="ghost"
+                                                    size="icon"
+                                                    className="text-muted-foreground hover:text-foreground"
+                                                >
+                                                    <ArrowRightIcon className="h-5 w-5" />
+                                                </Button>
+                                            </div>
+                                        </CardContent>
+                                    </a>
+                                </Card>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <Footer />
+</Layout>
