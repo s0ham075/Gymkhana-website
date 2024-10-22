@@ -155,18 +155,6 @@ const ViewDownMenu = () => {
                     <TreeItem itemId="technical-members" label="Members" />
                     <TreeItem itemId="technical-events" label="Events" />
                     <TreeItem itemId="technical-gallery" label="Gallery" />
-                    <TreeItem itemId="clubs" label="Clubs">
-                      <TreeItem itemId="loda" label="Loda">
-                        <TreeItem itemId="loda-members" label="Members" />
-                        <TreeItem itemId="loda-events" label="Events" />
-                        <TreeItem itemId="loda-gallery" label="Gallery" />
-                      </TreeItem>
-                      <TreeItem itemId="lassun" label="Lassun">
-                        <TreeItem itemId="lassun-members" label="Members" />
-                        <TreeItem itemId="lassun-events" label="Events" />
-                        <TreeItem itemId="lassun-gallery" label="Gallery" />
-                      </TreeItem>
-                    </TreeItem>
                   </TreeItem>
                 </TreeItem>
               </motion.li>
